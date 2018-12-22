@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.CreateAlbumController">
+   <children>
+      <ButtonBar layoutX="204.0" prefHeight="40.0" prefWidth="396.0">
+        <buttons>
+          <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addPhotoClicked" text="Add Photo" textAlignment="CENTER" />
+          <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#saveClicked" text="Save" textAlignment="CENTER" />
+          <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#cancelClicked" text="Cancel" textAlignment="CENTER" />
+        </buttons>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </ButtonBar>
+      <TextField fx:id="newAlbumName" layoutX="11.0" layoutY="8.0" promptText="Enter Album Name" />
+      <ListView fx:id="photoList" fixedCellSize="-3.0" layoutY="58.0" prefHeight="342.0" prefWidth="600.0" />
+   </children>
+</Pane>

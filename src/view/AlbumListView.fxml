@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/8.0" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AlbumListController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="348.0" minWidth="10.0" prefWidth="220.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="554.0" minWidth="10.0" prefWidth="554.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="49.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="347.0" minHeight="10.0" prefHeight="347.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Pane prefHeight="60.0" prefWidth="300.0">
+         <children>
+            <Button layoutX="80.0" layoutY="13.0" mnemonicParsing="false" onAction="#logoutClicked" text="Logout" />
+         </children>
+      </Pane>
+      <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <Button layoutX="21.0" layoutY="13.0" mnemonicParsing="false" onAction="#tagSearch" prefHeight="27.0" prefWidth="110.0" text="Search By Tag" />
+            <Text layoutX="148.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Text layoutX="298.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <Button layoutX="432.0" layoutY="13.0" mnemonicParsing="false" onAction="#dateSearch" prefHeight="27.0" prefWidth="118.0" text="Search By Date" />
+            <DatePicker fx:id="startdate" layoutX="183.0" layoutY="14.0" prefHeight="25.0" prefWidth="110.0" promptText="start date" />
+            <DatePicker fx:id="enddate" layoutX="314.0" layoutY="14.0" prefHeight="25.0" prefWidth="110.0" promptText="end date" />
+         </children>
+      </Pane>
+      <Pane prefHeight="347.0" prefWidth="184.0" GridPane.rowIndex="1">
+         <children>
+            <Button layoutX="59.0" layoutY="135.0" mnemonicParsing="false" onAction="#deleteAlbum" text="Delete Album" />
+            <Button layoutX="54.0" layoutY="190.0" mnemonicParsing="false" onAction="#renameAlbum" text="Rename Album" />
+            <Button layoutX="67.0" layoutY="76.0" mnemonicParsing="false" onAction="#addAlbum" text="Add Album" />
+            <Button layoutX="62.0" layoutY="300.0" mnemonicParsing="false" onAction="#openAlbum" text="Open Album" />
+         </children>
+      </Pane>
+      <SplitPane prefHeight="260.0" prefWidth="473.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <items>
+            <ListView fx:id="albumList" prefHeight="200.0" prefWidth="200.0" />
+         </items>
+      </SplitPane>
+   </children>
+</GridPane>
